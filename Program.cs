@@ -9,7 +9,7 @@
             int stars = 0;
             int[] pyramid = new int[levels];
             int[] reverse = new int[levels];
-            int k = levels;
+            int spaces = levels;
             
 
             Console.WriteLine("Vill du bygga din pyramid upp-och-ner? [y] [n]");
@@ -69,12 +69,12 @@
                     Console.Clear();//Clears the screen.
                     foreach (int i in pyramid)
                     {
-                        for (int x = 0; x < k; x++)//Almost the same nestled loop as the reversed.
+                        for (int x = 0; x < spaces; x++)//Almost the same nestled loop as the reversed.
                                                    //Here we start from the no. of levels given by user and work our way down to zero.
                         {
                             Console.Write(" ");
                         }
-                        k--;//After every row is written with correct spaces, the next lap will result in one less spacing.
+                        spaces--;//After every row is written with correct spaces, the next lap will result in one less spacing.
 
                         for (int j = 1; j <= i; j++)
                         {
@@ -93,7 +93,7 @@
 
             }
 
-            Console.WriteLine("Progarmmet slut!");
+            
 
 
 
