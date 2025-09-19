@@ -10,14 +10,12 @@
             int[] pyramid = new int[levels];
             int[] reverse = new int[levels];
             int k = levels;
+            int test = 0;
 
             Console.WriteLine("Vill du bygga din pyramid upp-och-ner? [Y] [N]");
             string flipped = Console.ReadLine();
 
-          
-
-
-
+         
 
             for (int i = 0; i < pyramid.Length; i++)//first we fill up the pyramid array with the correct number of stars on each level of the pyramid
             {
@@ -33,22 +31,58 @@
                 levels--;
             }
 
-            foreach (int i in pyramid)
-            {
-                for (int x = 0; x < k; x++)
-                {
-                    Console.Write(" ");
-                }
-                k--;
 
-                for (int j=1; j<=i; j++)
-                {
-                   
-                    Console.Write("*");
-                }
-                Console.WriteLine("");
-              
-                
+
+
+            switch (flipped)
+            {
+                case "y":
+
+                    Console.Clear();
+                    
+                    foreach (int i in reverse)
+                    {
+                        for (int j=0; j<levels; j++)
+                        {
+                            Console.Write(" ");
+                        }
+                        levels++;
+
+                        for (int j = 1; j <= i; j++)
+                        {
+
+                            Console.Write("*");
+                        }
+                        Console.WriteLine("");
+
+                    }
+
+
+                    break;
+
+
+
+                case "n":
+
+                    Console.Clear();
+                    foreach (int i in pyramid)
+                    {
+                        for (int x = 0; x < k; x++)
+                        {
+                            Console.Write(" ");
+                        }
+                        k--;
+
+                        for (int j = 1; j <= i; j++)
+                        {
+
+                            Console.Write("*");
+                        }
+                        Console.WriteLine("");
+
+                    }
+
+                    break;
             }
 
             Console.WriteLine("Progarmmet slut.");
@@ -59,10 +93,8 @@
 
 
 
+
           
-
-
-
 
 
 
